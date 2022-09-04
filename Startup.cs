@@ -6,18 +6,18 @@ namespace Albums
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
+    //    public Startup(IConfiguration configuration)
+    //    {
+    //        Configuration = configuration;
 
-        }
+    //    }
 
-        public IConfiguration Configuration { get; }
+    //    public IConfiguration Configuration { get; }
 
-        public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddDbContext<AppDbContext>();
-            services.AddControllersWithViews();
-        }
+    //    public void ConfigureServices(IServiceCollection services)
+    //    {
+    //        services.AddDbContext<AppDbContext>();
+    //        services.AddControllersWithViews();
+    //    }
     }
 }

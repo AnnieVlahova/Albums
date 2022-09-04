@@ -8,6 +8,7 @@ namespace Albums.Models
         public int Id { get; set; }
 
         [Required]
+        [Display(Name = "Full Name")]
         public string Title { get; set; }
 
         public Artist? Artist { get; set; }
@@ -19,7 +20,7 @@ namespace Albums.Models
         public DateTime? Released { get; set; }
 
         public List<Song>? Songs { get; set; }
-
+        [Display(Name = "Profile Picture")]
         public string? AlbumPictureURL { get; set; }
         public string? Description { get; set; }
 

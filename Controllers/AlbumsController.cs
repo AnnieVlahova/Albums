@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Albums.Data;
 using Albums.Models;
+using Albums.Data.ViewModels;
 
 namespace Albums.Controllers
 {
@@ -73,12 +74,16 @@ namespace Albums.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Title,Released,AlbumPictureURL,Description,Price")] Album album)
         {
+
             if (ModelState.IsValid)
             {
                 _context.Add(album);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
+            
+
             return View(album);
         }
 
@@ -95,6 +100,8 @@ namespace Albums.Controllers
             {
                 return NotFound();
             }
+
+
             return View(album);
         }
 
@@ -114,6 +121,7 @@ namespace Albums.Controllers
             {
                 try
                 {
+
                     _context.Update(album);
                     await _context.SaveChangesAsync();
                 }
@@ -130,6 +138,8 @@ namespace Albums.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+
+
             return View(album);
         }
 
